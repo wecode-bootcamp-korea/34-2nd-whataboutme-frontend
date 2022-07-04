@@ -3,6 +3,7 @@ import Nav from "./components/nav/Nav";
 import Footer from "./components/footer/Footer";
 import Main from "./pages/main/Main";
 import Detail from "./pages/detail/Detail";
+import KaKao from "./components/nav/components/kakao/KaKao";
 
 const Routers = () => {
   return (
@@ -10,7 +11,8 @@ const Routers = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/detail/" element={<Detail />} />
+        <Route path="/list" element={<Detail />} />
+        <Route path="/oauth/kakao/callback" element={<KaKao />} />
       </Routes>
       <Footer />
     </BrowserRouter>
