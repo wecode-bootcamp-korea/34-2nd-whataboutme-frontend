@@ -1,0 +1,27 @@
+{
+  "id": 1,
+  "name": "역삼 컬리넌",
+  "add": "서울 강남구 역삼동  720-23",
+  "image": [
+    { "id": "1", "isTop": true, "image": "images/likeroom.jpeg" },
+    { "id": "2", "isTop": false, "image": "images/mirrorroom.jpeg" },
+    { "id": "3", "isTop": false, "image": "images/niceroom.jpeg" },
+    { "id": "4", "isTop": false, "image": "images/redroom.jpeg" },
+    { "id": "5", "isTop": false, "image": "images/whiteroom.jpeg" }
+  ],
+  "roomInfo": [
+    { "id": 1, "name": "디럭스", "img": "/images/hotel.jpeg", "price": 59800 },
+    {
+      "id": 2,
+      "name": "프리미엄",
+      "img": "/images/whiteroom.jpeg",
+      "price": 80000
+    },
+    {
+      "id": 3,
+      "name": "스위트",
+      "img": "/images/cozyroom.jpeg",
+      "price": 300000
+    }
+  ]
+}
