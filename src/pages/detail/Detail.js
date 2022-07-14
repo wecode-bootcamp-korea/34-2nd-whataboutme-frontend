@@ -6,8 +6,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import RoomInfoBox from "./RoomInfoBox";
+import ListCalendarBox from "../list/ListCalendarBox";
+import { useParams } from "react-router-dom";
 
 const Detail = () => {
+  const params = useParams();
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const [imageIndex, setImageIndex] = useState(0);
@@ -17,15 +20,17 @@ const Detail = () => {
   // const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    fetch("data/detailData.json", {
+    fetch(`http://10.58.1.238:8080/products/${params.id}`, {
       method: "GET",
     })
       .then(res => res.json())
       .then(data => {
-        setRoom(data);
+        console.log(data);
+        setRoom(data.product);
         // console.log(data);
       });
   }, []);
+  console.log(room);
 
   // const modalClose = () => {
   //   setIsModal(!isModal);
@@ -60,14 +65,14 @@ const Detail = () => {
       <Maintop>
         <AsideImages>
           <AsideImage
-            src={room.image && room.image[imageIndex].image}
+            src={room.images && room.images[imageIndex].url}
             alt="roomImg"
           />
           <StyledSlider {...settings}>
-            {room.image?.map((list, idx) => (
+            {room.images?.map((list, idx) => (
               <SliderImage
                 key={list.id}
-                src={list.image}
+                src={list.url}
                 alt="room1"
                 onClick={() => setImageIndex(idx)}
               />
@@ -76,15 +81,15 @@ const Detail = () => {
         </AsideImages>
         <AsideContent>
           <AsideRoom>{room.name}</AsideRoom>
+          <MainText>{room.address}</MainText>
+          <br />
           <MainText fontSize="20px" color="orange">
             추천해요
           </MainText>
           <MainText>리뷰 700개</MainText>
           <br />
           <MainText>{room.add}</MainText>
-          <button onClick={() => setIsOpen(!modalIsOpen)}>
-            넷플릭스 프리존
-          </button>
+          <Div onClick={() => setIsOpen(!modalIsOpen)}>넷플릭스 프리존</Div>
           <Modal
             isOpen={modalIsOpen}
             onAfterOpen={afterOpenModal}
@@ -109,21 +114,15 @@ const Detail = () => {
         {/* {console.log(bottomPage)} */}
         {bottomPage === "객실안내" && (
           <DailyContentBox>
-            <DailyBox>
-              <input
-                type="week"
-                name="week"
-                id="room-week"
-                min="2022-W18"
-                max="2023-W26"
-                required
-              />
-            </DailyBox>
+            {/* ㅁㄴㅇㅁㄴㅇㅁㄴ */}
+            <CalendarBox>
+              <ListCalendarBox />
+            </CalendarBox>
 
-            {room.roomInfo?.map(oneroom => {
+            {room.rooms?.map(oneroom => {
               return (
                 <RoomOption key={oneroom.id}>
-                  <OptionImg src={oneroom.img} />
+                  <OptionImg src={oneroom.image} />
                   <InformationRoom>
                     <RoomType>{oneroom.name}</RoomType>
                     <OptionText>숙박</OptionText>
@@ -138,7 +137,7 @@ const Detail = () => {
                         예약
                       </ReservationRoom>
                       <ReservationRoom>
-                        {oneroom.price.toLocaleString()}
+                        {Number(oneroom.price).toLocaleString()}
                       </ReservationRoom>
                     </RoomPrice>
                     <InOutTime>
@@ -151,7 +150,14 @@ const Detail = () => {
                         <RoomTime>익일 12시부터</RoomTime>
                       </RoomCheckout>
                     </InOutTime>
-                    <button type="button">숙박예약</button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        alert("예약완료");
+                      }}
+                    >
+                      숙박예약
+                    </button>
                   </InformationRoom>
                 </RoomOption>
               );
@@ -165,15 +171,28 @@ const Detail = () => {
 };
 
 const Container = styled.div`
-  /* margin-top: 100px; */
+  @font-face {
+    font-family: "YUniverse-L";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-L.woff2")
+      format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+  font-family: "YUniverse-L";
+  font-weight: bolder;
+  margin-top: 50px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 60px 0;
 `;
 
 const Maintop = styled.div`
   ${props => props.theme.variables.flexSet(``, `space-between`, `flex-start`)}
-  ${props => props.theme.variables.area("50%", "700px")}
+  width: 70%;
+  height: 700px;
+  /* ${props => props.theme.variables.area("50%", "700px")} */
 `;
 
 const AsideImages = styled.div`
@@ -267,7 +286,7 @@ const ModalClose = styled.button`
   height: 25px;
 `;
 const UnderBottom = styled.div`
-  width: 50%;
+  /* width: 90%; */
 `;
 const SideTab = styled.div`
   font-size: 30px;
@@ -287,7 +306,9 @@ const DailyBox = styled.button`
 `;
 const RoomOption = styled.div`
   display: flex;
-  width: 900px;
+  width: 800px;
+  margin: 5px 0;
+  justify-content: center;
 
   gap: 20px;
   border: 3px solid rgba(0, 0, 0, 0.08);
@@ -304,7 +325,7 @@ const InformationRoom = styled.div`
   width: 300px;
   height: 200px;
   display: inline;
-  margin-left: 50px;
+  /* margin-left: 50px; */
   padding-top: 30px;
 
   button {
@@ -371,6 +392,26 @@ const MainText = styled.span`
 
 const InOutTime = styled.div`
   margin-top: 120px;
+`;
+
+const Div = styled.div`
+  width: 200px;
+  padding: 7px;
+  background-color: #f7323f;
+  font-size: 30px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+`;
+
+const CalendarBox = styled.div`
+  display: inline-block;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px 0;
+  user-select: none;
 `;
 
 export default Detail;

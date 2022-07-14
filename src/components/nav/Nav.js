@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import SearchBox from "./components/searchBox/SearchBox";
@@ -6,6 +7,7 @@ import LoginModal from "./components/loginModal/LoginModal";
 import { useToggle } from "../../hooks/useHandleStatus";
 
 const Nav = () => {
+  const navigate = useNavigate();
   const [isModal, handleModal] = useToggle();
   const [loginToken, setLoginToken] = useState(null);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -25,8 +27,12 @@ const Nav = () => {
     window.addEventListener("scroll", updateScroll);
   }, []);
 
+  const goToList = cate => {
+    navigate(`/list?region=${cate}`);
+  };
+
   return (
-    <>
+    <RealNav>
       <NavBar primary={scrollPosition}>
         <NavWrapper>
           <Logo>
@@ -53,7 +59,12 @@ const Nav = () => {
                 지역별
                 <CitiesGroup hovered={hoverdMenu}>
                   {CITY_NAME.map(citys => (
-                    <CityName to="#" key={citys.id}>
+                    <CityName
+                      key={citys.id}
+                      onClick={() => {
+                        goToList(citys.city);
+                      }}
+                    >
                       {citys.city}
                     </CityName>
                   ))}
@@ -77,12 +88,24 @@ const Nav = () => {
         </NavWrapper>
       </NavBar>
       {isModal && <LoginModal handleModal={handleModal} />}
-    </>
+    </RealNav>
   );
 };
+const RealNav = styled.div`
+  padding-top: 72px;
+  @font-face {
+    font-family: "yg-jalnan";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  font-family: "yg-jalnan";
+`;
 
 const NavBar = styled.nav`
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   ${({ theme: { variables } }) => variables.area(``, `72px`)}
@@ -208,10 +231,11 @@ const CitiesGroup = styled.div`
   box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%);
 `;
 
-const CityName = styled(NavLink)`
+const CityName = styled.div`
   ${({ theme: { variables } }) => variables.flexSet()}
   ${({ theme: { variables } }) => variables.area(`100%`, ``)}
   padding: 10px;
+  color: ${({ theme: { style } }) => style.colors.black};
 
   &:hover {
     color: ${({ theme: { style } }) => style.colors.red};

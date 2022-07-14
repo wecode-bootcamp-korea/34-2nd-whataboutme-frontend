@@ -8,10 +8,10 @@ import ItemList from "../itemList/ItemList";
 const ListCarousel = ({ recommendMotel }) => {
   return (
     <>
-      <SlideTitle>추천 모텔</SlideTitle>
+      <SlideTitle color="#f5303f">추천 모텔</SlideTitle>
       <StyledSlider {...settings}>
-        {recommendMotel.map((datas, index) => (
-          <ItemList data={datas} key={index} />
+        {recommendMotel?.map(data => (
+          <ItemList data={data} key={data.id} />
         ))}
       </StyledSlider>
     </>
@@ -41,6 +41,15 @@ const StyledSlider = styled(Slider)`
 `;
 
 const SlideTitle = styled.h2`
+  @font-face {
+    font-family: "GangwonEduPowerExtraBoldA";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  color: ${props => props.color};
+  font-family: "GangwonEduPowerExtraBoldA";
   font-size: ${({ theme: { style } }) => style.fontSizes.xxl};
   margin-bottom: 10px;
 `;

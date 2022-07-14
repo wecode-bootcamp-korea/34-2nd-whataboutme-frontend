@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
 export const ListCotainer = styled.div`
+  @font-face {
+    font-family: "YUniverse-L";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-L.woff2")
+      format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+  font-family: "YUniverse-L";
+  font-weight: bolder;
+
   box-sizing: border-box;
   display: flex;
   justify-content: center;

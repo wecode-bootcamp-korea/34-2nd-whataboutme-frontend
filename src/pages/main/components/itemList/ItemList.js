@@ -1,12 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const ItemList = ({ data }) => {
+  const navigate = useNavigate();
   return (
-    <SlideList>
+    <SlideList onClick={() => navigate(`/detail/${data.id}`)}>
       <ListImg src={`${data.image_url}`} alt="motelListItem" />
       <ListInfo>
-        <MotelName>{data.motel_name}</MotelName>
+        <MotelName>{data.name}</MotelName>
         <MotelLodgingWrapper>
           <MotelLodging>숙박</MotelLodging>
           <MotelPrice>
@@ -18,11 +20,11 @@ const ItemList = ({ data }) => {
         </MotelLodgingWrapper>
         <MotelCheckIn>
           <MotelCheckInTitle>입실 시간</MotelCheckInTitle>
-          <MotelCheckInTime>{`${data.check_in_time}시부터`}</MotelCheckInTime>
+          <MotelCheckInTime>19시부터</MotelCheckInTime>
         </MotelCheckIn>
         <MotelCheckOut>
           <MotelCheckOutTitle>퇴실 시간</MotelCheckOutTitle>
-          <MotelCheckOutTime>{`익일 ${data.check_out_time}시`}</MotelCheckOutTime>
+          <MotelCheckOutTime>익일 12시</MotelCheckOutTime>
         </MotelCheckOut>
       </ListInfo>
     </SlideList>
@@ -31,12 +33,20 @@ const ItemList = ({ data }) => {
 
 const SlideList = styled.div`
   cursor: pointer;
+  @font-face {
+    font-family: "YUniverse-L";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-L.woff2")
+      format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+  font-family: "YUniverse-L";
 `;
 
 const ListImg = styled.img`
   ${({ theme: { variables } }) => variables.area(`100%`, `200px`)}
   border: 0;
-  border-radius: ${({ theme: { style } }) => style.radius.regular};
+  /* border-radius: ${({ theme: { style } }) => style.radius.regular}; */
 `;
 
 const ListInfo = styled.div`
@@ -44,13 +54,14 @@ const ListInfo = styled.div`
   padding: 10px;
   margin-top: 5px;
   border: 0;
-  border-radius: ${({ theme: { style } }) => style.radius.regular};
+  /* border-radius: ${({ theme: { style } }) => style.radius.regular}; */
   background-color: ${({ theme: { style } }) => style.colors.white};
 `;
 
 const MotelName = styled.h3`
   font-size: ${({ theme: { style } }) => style.fontSizes.xl};
   margin-bottom: 10px;
+  font-weight: bold;
 `;
 
 const MotelLodgingWrapper = styled.div`

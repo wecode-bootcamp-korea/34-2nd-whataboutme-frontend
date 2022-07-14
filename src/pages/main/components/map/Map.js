@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const { kakao } = window;
 
-const Map = ({ MOTEL_RECOMMEND_INFO }) => {
+const Map = ({ rooms }) => {
   const container = useRef(null);
 
   const options = {
@@ -16,18 +16,36 @@ const Map = ({ MOTEL_RECOMMEND_INFO }) => {
 
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-    MOTEL_RECOMMEND_INFO.map(location => {
+    rooms?.map(location => {
       const markerPosition = new kakao.maps.LatLng(
-        location.coordinate[0],
-        location.coordinate[1]
+        location.latitude,
+        location.longtitude
       );
       return new kakao.maps.Marker({ map, position: markerPosition });
     });
   }, []);
 
-  return <KakaoMap className="map" ref={container} id="map" />;
+  return (
+    <>
+      <SlideTitle color="#f5303f">내 주변</SlideTitle>
+      <KakaoMap className="map" ref={container} id="map" />
+    </>
+  );
 };
+const SlideTitle = styled.h2`
+  @font-face {
+    font-family: "GangwonEduPowerExtraBoldA";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  color: ${props => props.color};
+  font-family: "GangwonEduPowerExtraBoldA";
 
+  font-size: ${({ theme: { style } }) => style.fontSizes.xxl};
+  margin-bottom: 10px;
+`;
 const KakaoMap = styled.div`
   ${({ theme: { variables } }) => variables.area("100%", "550px")}
   border: 0;

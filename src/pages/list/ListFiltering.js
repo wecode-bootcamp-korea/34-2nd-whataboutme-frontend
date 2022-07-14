@@ -48,12 +48,12 @@ const ListFiltering = ({
           <S.CheckBoxes key={list.id}>
             <S.CheckBox
               type="radio"
-              name="theme"
-              value={list.theme}
+              name="themes"
+              value={list.themes}
               defaultChecked={isInitial}
               onClick={e => handleFilter(e)}
             />
-            {list.theme}
+            {list.themes}
           </S.CheckBoxes>
         );
       })}
@@ -94,16 +94,16 @@ const ListFiltering = ({
 };
 
 const themeData = [
-  { id: 1, theme: "무인텔" },
-  { id: 2, theme: "파티룸" },
-  { id: 3, theme: "거울룸" },
-  { id: 4, theme: "복층룸" },
-  { id: 5, theme: "공주룸" },
-  { id: 6, theme: "트윈베드" },
-  { id: 7, theme: "야외테라스" },
-  { id: 8, theme: "바다뷰" },
-  { id: 9, theme: "호수뷰" },
-  { id: 10, theme: "하늘뷰" },
+  { id: 1, themes: "무인텔" },
+  { id: 2, themes: "파티룸" },
+  { id: 3, themes: "거울룸" },
+  { id: 4, themes: "복층룸" },
+  { id: 5, themes: "공주룸" },
+  { id: 6, themes: "트윈베드" },
+  { id: 7, themes: "야외테라스" },
+  { id: 8, themes: "바다뷰" },
+  { id: 9, themes: "호수뷰" },
+  { id: 10, themes: "하늘뷰" },
 ];
 
 const distanceData = [

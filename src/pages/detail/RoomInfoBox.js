@@ -75,7 +75,7 @@ export default function RoomInfoBox() {
 
 const InfoContainer = styled.div``;
 const BasicInfo = styled.button`
-  width: 1302px;
+  width: 800px;
   background-color: #fff;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -114,7 +114,7 @@ const CarInfoFrontTitle = styled.ul`
 `;
 
 const PriceInfo = styled.div`
-  width: 1302px;
+  /* width: 1302px; */
   background-color: #fff;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -133,6 +133,6 @@ const PriceArea = styled.div`
 `;
 
 const PriceImg = styled.img`
-  width: 870px;
+  /* width: 870px; */
   height: 900px;
 `;

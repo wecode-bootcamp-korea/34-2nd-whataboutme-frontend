@@ -20,6 +20,6 @@ const options = {
 export default KakaoMap;
 
 const MapWrapper = styled.div`
-  width: 1240px;
+  /* width: 1240px; */
   height: 238px;
 `;

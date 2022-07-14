@@ -1,16 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Map, MapMarker, CustomOverlayMap } from "react-kakao-maps-sdk";
 
 import * as S from "./List.styled";
 
 const KakaoMap = ({ myPosition, roomList }) => {
+  const navigate = useNavigate();
   return (
     <Map
       center={{ lat: myPosition.lati, lng: myPosition.long }}
-      style={{ width: "100%", height: "360px" }}
+      style={{ width: "100%", height: "460px" }}
       level={5}
     >
-      {roomList?.map((position, index) => (
+      {roomList?.map(position => (
         <>
           <MapMarker
             key={position.id}
@@ -33,9 +35,7 @@ const KakaoMap = ({ myPosition, roomList }) => {
               lng: position.longtitude,
             }}
           >
-            <S.CustomBox
-              onClick={() => console.log(`navigate(/detail/${position.id})`)}
-            >
+            <S.CustomBox onClick={() => navigate(`/detail/${position.id}`)}>
               <S.CustomText color="red" fontWeight="bold">
                 {position.name}
               </S.CustomText>

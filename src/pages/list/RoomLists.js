@@ -1,9 +1,9 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as S from "./List.styled";
 
 const RoomLists = ({ roomList }) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <S.Lists>
       {roomList?.map(list => {
@@ -13,10 +13,11 @@ const RoomLists = ({ roomList }) => {
             backColor="#fdfbf5"
             height="250px"
             borderBtm="1px solid #ebebeb"
-            onClick={() => console.log(list.id)}
+            onClick={() => navigate(`/detail/${list.id}`)}
           >
             <S.ListImg
-              src={`/images/list/img${list.id}.jpeg`}
+              // src={`/images/list/img${list.id}.jpeg`}
+              src={list.image}
               width="160px"
               height="200px"
               mg="20px 0 0 10px"
@@ -31,7 +32,7 @@ const RoomLists = ({ roomList }) => {
                 {list.distance}m | {list.address}
               </S.TextLine>
               <S.TextLine mg="133px 10px">
-                {list.theme?.map(val => {
+                {list.themes?.map(val => {
                   return (
                     <S.TextLine
                       key={val}
