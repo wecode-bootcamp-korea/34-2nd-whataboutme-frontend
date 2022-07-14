@@ -29,13 +29,18 @@ const LoginModal = ({ handleModal }) => {
 };
 
 const AreaWrapper = styled.div`
-  ${({ theme: { variables } }) => variables.area(``, `100vh`)}
+  position: fixed;
+  top: 0;
+  left: 0;
+  ${({ theme: { variables } }) => variables.area(`100%`, `100%`)}
+  z-index: 398;
 `;
 
 const BlankWrapper = styled.div`
-  ${({ theme: { variables } }) => variables.area(``, `100%`)}
+  ${({ theme: { variables } }) => variables.area(`100%`, `100%`)}
   background-color: ${({ theme: { style } }) => style.colors.black};
   opacity: 0.5;
+  z-index: 402;
 `;
 
 const Modal = styled.div`
@@ -48,6 +53,7 @@ const Modal = styled.div`
   border: 0;
   border-radius: ${({ theme: { style } }) => style.radius.regular};
   background-color: ${({ theme: { style } }) => style.colors.white};
+  z-index: 400;
 `;
 
 const CloseButton = styled.button`

@@ -90,6 +90,7 @@ const NavBar = styled.nav`
   background-color: ${({ primary, theme: { style } }) =>
     primary < 10 ? style.colors.red : style.colors.white};
   box-shadow: 0px 2px 3px 0px rgb(0 0 0 / 10%);
+  z-index: 3;
 `;
 
 const Logo = styled.span`
@@ -169,6 +170,7 @@ const ListLocal = styled.span`
   padding: 20px;
   color: ${({ primary, theme: { style } }) =>
     primary < 10 ? style.colors.white : style.colors.black};
+  transition: 0.5s;
 
   &:link {
     transition: 0.5s;
@@ -202,7 +204,7 @@ const CitiesGroup = styled.div`
   ${({ theme: { variables } }) => variables.area(`100px`, ``)}
   padding: 20px 0;
   border-radius: ${({ theme: { style } }) => style.radius.thin};
-  z-index: 1;
+  background-color: ${({ theme: { style } }) => style.colors.white};
   box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%);
 `;
 
