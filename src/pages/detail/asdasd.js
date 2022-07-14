@@ -89,12 +89,15 @@ const Detail = () => {
             isOpen={modalIsOpen}
             onAfterOpen={afterOpenModal}
             onRequestClose={closeModal}
+            // style={customStyles}
             contentLabel="Example Modal"
             style={styleModal}
           >
             <ModalOne />
             <ModalClose onClick={() => setIsOpen(false)}>X</ModalClose>
           </Modal>
+          {/* {console.log(isModal)} */}
+          {/* {isModal && <Modal modalClose={modalClose} />} */}
         </AsideContent>
       </Maintop>
       <UnderBottom>
@@ -108,7 +111,7 @@ const Detail = () => {
         </SideTab>
         {/* {console.log(bottomPage)} */}
         {bottomPage === "객실안내" && (
-          <DailyContentBox>
+          <div>
             <DailyBox>
               <input
                 type="week"
@@ -151,12 +154,16 @@ const Detail = () => {
                         <RoomTime>익일 12시부터</RoomTime>
                       </RoomCheckout>
                     </InOutTime>
+                    {/* oc = setState("객실정보")
+              {if(state==겍시ㅣㅇㄹ정보){
+                return (<div>객실안네</div>)
+              }} */}
                     <button type="button">숙박예약</button>
                   </InformationRoom>
                 </RoomOption>
               );
             })}
-          </DailyContentBox>
+          </div>
         )}
         {bottomPage === "숙소정보" && <RoomInfoBox />}
       </UnderBottom>
@@ -165,10 +172,14 @@ const Detail = () => {
 };
 
 const Container = styled.div`
-  /* margin-top: 100px; */
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .slick-arrow {
+    background-color: gray;
+  }
 `;
 
 const Maintop = styled.div`
@@ -191,22 +202,13 @@ const StyledSlider = styled(Slider)`
   height: 110px;
   /* border-radius: 9px; */
   margin-top: 20px;
-
-  .slick-next::before {
-    color: black;
-  }
-
-  .slick-prev::before {
-    color: black;
-  }
 `;
 
 const SliderImage = styled.img`
   width: 150px;
   height: 110px;
-  /* border-radius: 5px; */
-  /* cursor: pointer;
-  color: black; */
+  border-radius: 5px;
+  cursor: pointer;
 `;
 
 const AsideContent = styled.div`
@@ -277,7 +279,7 @@ const RoomInfo = styled.span`
   margin-right: 25px;
   cursor: pointer;
 `;
-const DailyContentBox = styled.div``;
+
 const DailyBox = styled.button`
   cursor: pointer;
   font-size: 30px;
