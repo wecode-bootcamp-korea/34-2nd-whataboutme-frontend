@@ -30,12 +30,10 @@ const colors = {
   lightRed: "#f8716f",
   crimson: "#f2074c00",
 };
-
 const theme = {
   fontWeights,
   fontSizes,
   radius,
   colors,
 };
-
 export default theme;

@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "명동 뉴 서울 호텔",
+    "address": "강남구 대치4동",
+    "latitude": "37.5058111",
+    "longtitude": "127.0540111",
+    "img": "/images/list/img1.jpeg",
+    "price": 110000,
+    "theme": ["무인텔", "거울룸", "하늘뷰"]
+  },
+  {
+    "id": 2,
+    "name": "종로 스카이호텔",
+    "address": "강남구 대치4동",
+    "latitude": "37.5105211",
+    "longtitude": "127.0482911",
+    "img": ["/images/list/img2.jpeg"],
+    "price": 159900,
+    "theme": ["무인텔", "호수뷰", "공주룸"]
+  },
+  {
+    "id": 3,
+    "name": "명동 밀리오레호텔",
+    "address": "강남구 대치4동",
+    "latitude": "37.5032311",
+    "longtitude": "127.0465711",
+    "img": "/images/list/img3.jpeg",
+    "price": 18800,
+    "theme": ["파티룸", "거울룸", "바다뷰"]
+  },
+  {
+    "id": 4,
+    "name": "종로 호텔 더 포스트",
+    "address": "강남구 삼성2동",
+    "latitude": "37.5035111",
+    "longtitude": "127.0513011",
+    "img": "/images/list/img4.jpeg",
+    "price": 53000,
+    "theme": ["파티룸", "트윈베드", "야외테라스"]
+  },
+  {
+    "id": 5,
+    "name": "명동 메이원 호텔",
+    "address": "강남구 삼성2동",
+    "latitude": "37.5054711",
+    "longtitude": "127.0516411",
+    "img": "/images/list/img5.jpeg",
+    "price": 40000,
+    "theme": ["거울룸", "복층룸", "하늘뷰"]
+  },
+  {
+    "id": 6,
+    "name": "이태원 반짝 모텔",
+    "address": "강남구 삼성2동",
+    "latitude": "37.5047911",
+    "longtitude": "127.0444311",
+    "img": "/images/list/img6.jpeg",
+    "price": 490000,
+    "theme": ["거울룸", "야외테라스", "파티룸"]
+  },
+  {
+    "id": 7,
+    "name": "감자국 고구마모텔",
+    "address": "강남구 삼성2동",
+    "latitude": "37.5079211",
+    "longtitude": "127.0430511",
+    "img": "/images/list/img7.jpeg",
+    "price": 555555,
+    "theme": ["무인텔", "파티룸", "거울룸"]
+  },
+  {
+    "id": 8,
+    "name": "하늘정원",
+    "address": "강남구 삼성2동",
+    "latitude": "37.5089411",
+    "longtitude": "127.0458911",
+    "img": "/images/list/img8.jpeg",
+    "price": 999000,
+    "theme": ["호수뷰", "하늘뷰", "바다뷰"]
+  },
+  {
+    "id": 9,
+    "name": "굿스테이 216호",
+    "address": "강남구 삼성2동",
+    "latitude": "37.5105211",
+    "longtitude": "127.0437111",
+    "img": "/images/list/img9.jpeg",
+    "price": 20000,
+    "theme": ["무인텔", "파티룸", "하늘뷰"]
+  }
+]
