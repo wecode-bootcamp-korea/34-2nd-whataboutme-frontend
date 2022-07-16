@@ -1,5 +1,6 @@
 #  나는어때
 - Front-End: 김민석, 안유주, 하상원
+<br>
 [시현 영상 보러가기](https://www.youtube.com/watch?v=B9UGGxGt4L4)
 
 <br>
@@ -20,40 +21,38 @@ Front-End만으로 구성된 팀으로 챌린지 및 라이브러리 사용
 <br>
 
 ## 필수구현 기능
-> ### 1. 소셜 로그인 (카카오)
+> ### 1. Nav
   - REST-API를 사용한 소셜 로그인
 
-> ### 2. 메인 페이지
+> ### 2. Main-page
   - React-Slick을 이용한 Carousel 구현
   - kakao map api로 kakao map 구현
 
-> ### 3. 리스트 페이지
-  - 내 주변 
+> ### 3. List-page
+  - 사용자의 현재 GPS 가져오기 구현
+  - 숙박지 필터링 기능 구현
+  - geolib, getDistance 라이브러리를 활용한 kakao map 구현
 
-> ### 4. 상세 페이지
-  - 
+> ### 4. Detail-page
+  - React-Slick을 이용한 Carousel 구현
+  - kakao map api로 kakao map 구현
 
 
 <br>
 
 ## 소통에 사용한 협업 툴
 ### Slack
-<img width="942" alt="스크린샷 2022-07-01 오후 3 48 13" src="https://user-images.githubusercontent.com/50426259/176840075-30907e6a-8be6-4914-88d3-fe0d3742ad9c.png">
+- 작업 중 변경 사항이 생기거나 공유하고 싶은 내용이 생길 때 사용 
 
-- Back-end와 자료 공유 및 개인적인 소통
-
-### Trello
-![trello](https://user-images.githubusercontent.com/50426259/176840626-5bc5b445-4c0b-4259-93bd-56d9f63f2485.gif)
-- 
+<img width="400" alt="스크린샷 2022-07-14 오후 11 54 26" src="https://user-images.githubusercontent.com/90183279/179352627-8ce90e09-39e5-4ad5-88bc-ddff41e0c713.png">
 
 ### Notion
-![image](https://user-images.githubusercontent.com/50426259/176840968-aab75ef3-4a5c-4497-a532-db539a297b58.png)
 - 매일 진행되는 Stand-up meeting에서 각자의 진행 상황과 블로커 파악 및 소통
-- 미팅에서 각자의 작업 현황 공유
-- 
+- 작업 진행 티켓 관리
+- 공통 작업 디렉토리 관리
+- 라이브러리 관리
 
-### ERD
-![image](https://user-images.githubusercontent.com/50426259/176841194-db70fa46-6f62-4a65-8638-3c2562092a32.png)
-- Back-end의 ERD 자료 구성을 참고하여 Mockdata 및 실제 서버와 통신시 불러오는 key값 확인
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/90183279/179352722-98a44738-f046-401d-9a0d-09efca234afd.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/90183279/179352754-5d4206db-b126-4b9f-b360-91dabbf1e646.png">
 
 
