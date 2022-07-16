@@ -1,26 +1,11 @@
 #  나는어때
-🔶 개요: 여행지 주변의 모텔, 호텔, 게스트하우스를 예약할 수 있는 사이트
-🔶 참여 인원: Front-End 3명
-🔶 제작 기간: 2022.07.07 ~ 2022.07.14
-🔶 협업 툴: Slack, Notion
-🔶 회의 방식: Sprint회의를 진행해서 티켓을 관리하고 StandUp meeting을 통해 팀원의 진행도를 체크
-🔶 기술 스택
-- React: 나는어때 페이지가 React로 제작되지 않아서인지 상당히 느렸기 때문에 React로 진행
-- Styled-components: 더욱 동적으로 제작하기 위해서 사용
+🔶 개요: 여행지 주변의 모텔, 호텔, 게스트하우스를 예약할 수 있는 사이트<br>
+🔶 참여 인원: Front-End 3명<br>
+🔶 제작 기간: 2022.07.07 ~ 2022.07.14<br>
+🔶 협업 툴: Slack, Notion<br>
+🔶 회의 방식: Sprint회의를 진행해서 티켓을 관리하고 StandUp meeting을 통해 팀원의 진행도를 체크<br>
 🔶 담당 구현 파트: Nav, Main-page, Footer
 <br>[시현 영상 보러가기](https://www.youtube.com/watch?v=B9UGGxGt4L4)
-
-<br>
-
-## 프로젝트 소개
-여기어때를 모티브로한 여행지 주변의 모텔, 호텔, 게스트 하우스를 예약할 수 있는 사이트
-
-<br>
-
-## 프로젝트 중점 사항
-Front-End만으로 구성된 팀으로 챌린지 및 라이브러리 사용
-
-<br>
 
 ## 사용기술 스택
 - Front-end: <img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/ReactRouter-CA4245?style=flat-square&logo=ReactRouter&logoColor=white"/> <img src="https://img.shields.io/badge/styled-components-DB7093?style=flat-square&logo=styled-components&logoColor=white"/> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"/> <img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
