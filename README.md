@@ -1,5 +1,13 @@
 #  나는어때
-- Front-End: 김민석, 안유주, 하상원
+🔶 개요: 여행지 주변의 모텔, 호텔, 게스트하우스를 예약할 수 있는 사이트
+🔶 참여 인원: Front-End 3명
+🔶 제작 기간: 2022.07.07 ~ 2022.07.14
+🔶 협업 툴: Slack, Notion
+🔶 회의 방식: Sprint회의를 진행해서 티켓을 관리하고 StandUp meeting을 통해 팀원의 진행도를 체크
+🔶 기술 스택
+- React: 나는어때 페이지가 React로 제작되지 않아서인지 상당히 느렸기 때문에 React로 진행
+- Styled-components: 더욱 동적으로 제작하기 위해서 사용
+🔶 담당 구현 파트: Nav, Main-page, Footer
 <br>[시현 영상 보러가기](https://www.youtube.com/watch?v=B9UGGxGt4L4)
 
 <br>
