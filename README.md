@@ -1,7 +1,6 @@
 #  나는어때
 - Front-End: 김민석, 안유주, 하상원
-<br>
-[시현 영상 보러가기](https://www.youtube.com/watch?v=B9UGGxGt4L4)
+<br>[시현 영상 보러가기](https://www.youtube.com/watch?v=B9UGGxGt4L4)
 
 <br>
 
