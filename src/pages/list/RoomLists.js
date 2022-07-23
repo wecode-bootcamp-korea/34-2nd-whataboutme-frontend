@@ -16,8 +16,8 @@ const RoomLists = ({ roomList }) => {
             onClick={() => navigate(`/detail/${list.id}`)}
           >
             <S.ListImg
-              // src={`/images/list/img${list.id}.jpeg`}
-              src={list.image}
+              src={`/images/list/img${list.id}.jpeg`}
+              // src={list.image}
               width="160px"
               height="200px"
               mg="20px 0 0 10px"

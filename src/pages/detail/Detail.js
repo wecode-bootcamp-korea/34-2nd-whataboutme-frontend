@@ -19,18 +19,28 @@ const Detail = () => {
   const [room, setRoom] = useState({});
   // const [isVisible, setIsVisible] = useState(true);
 
+  // useEffect(() => {
+  //   fetch(`http://10.58.1.238:8080/products/${params.id}`, {
+  //     method: "GET",
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       console.log(data);
+  //       setRoom(data.product);
+  //       // console.log(data);
+  //     });
+  // }, []);
+  // console.log(room);
+
   useEffect(() => {
-    fetch(`http://10.58.1.238:8080/products/${params.id}`, {
+    fetch(`/data/detailData.json`, {
       method: "GET",
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
-        setRoom(data.product);
-        // console.log(data);
+        setRoom(data);
       });
   }, []);
-  console.log(room);
 
   // const modalClose = () => {
   //   setIsModal(!isModal);
@@ -39,6 +49,8 @@ const Detail = () => {
   // function openModal() {
   //   setIsOpen(true);
   // }
+
+  console.log(room);
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
@@ -64,15 +76,12 @@ const Detail = () => {
     <Container>
       <Maintop>
         <AsideImages>
-          <AsideImage
-            src={room.images && room.images[imageIndex].url}
-            alt="roomImg"
-          />
+          <AsideImage src={room.image && room.image[0].image} alt="roomImg" />
           <StyledSlider {...settings}>
             {room.images?.map((list, idx) => (
               <SliderImage
                 key={list.id}
-                src={list.url}
+                src={list.image}
                 alt="room1"
                 onClick={() => setImageIndex(idx)}
               />

@@ -47,42 +47,14 @@ const List = () => {
     getLoc();
   }, []);
 
-  // useEffect(() => {
-  //   if (!myPosition.lati) return;
-  //   fetch("data/listData.json", {
-  //     method: "GET",
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       data.forEach(list => {
-  //         list.distance = getDistance(
-  //           {
-  //             latitude: myPosition.lati,
-  //             longitude: myPosition.long,
-  //             // latitude: 37.50591,
-  //             // longitude: 127.05401,
-  //           },
-  //           {
-  //             latitude: Number(list.latitude),
-  //             longitude: Number(list.longtitude),
-  //           }
-  //         );
-  //       });
-
-  //       data.sort((a, b) => a.distance - b.distance);
-
-  //       setRoomList(data);
-  //       setRealList(data);
-  //     });
-  // }, [myPosition]);
-
   useEffect(() => {
-    fetch("http://10.58.1.238:8080/products", {
+    if (!myPosition.lati) return;
+    fetch("/data/listData.json", {
       method: "GET",
     })
       .then(res => res.json())
       .then(data => {
-        data.products.map(list => {
+        data.forEach(list => {
           list.distance = getDistance(
             {
               latitude: myPosition.lati,
@@ -95,15 +67,43 @@ const List = () => {
               longitude: Number(list.longtitude),
             }
           );
-          return list;
         });
 
-        data.products.sort((a, b) => a.distance - b.distance);
+        data.sort((a, b) => a.distance - b.distance);
 
-        setRoomList(data.products);
-        setRealList(data.products);
+        setRoomList(data);
+        setRealList(data);
       });
   }, [myPosition]);
+
+  // useEffect(() => {
+  //   fetch("http://10.58.1.238:8080/products", {
+  //     method: "GET",
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       data.products.map(list => {
+  //         list.distance = getDistance(
+  //           {
+  //             latitude: myPosition.lati,
+  //             longitude: myPosition.long,
+  //             // latitude: 37.50591,
+  //             // longitude: 127.05401,
+  //           },
+  //           {
+  //             latitude: Number(list.latitude),
+  //             longitude: Number(list.longtitude),
+  //           }
+  //         );
+  //         return list;
+  //       });
+
+  //       data.products.sort((a, b) => a.distance - b.distance);
+
+  //       setRoomList(data.products);
+  //       setRealList(data.products);
+  //     });
+  // }, [myPosition]);
 
   const goFiltering = () => {
     let newArr = [...realList];

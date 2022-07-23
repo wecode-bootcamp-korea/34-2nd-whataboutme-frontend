@@ -7,7 +7,7 @@
     "longtitude": "127.0540111",
     "image_url": "/images/list/img1.jpeg",
     "price": 110000,
-    "theme": ["무인텔", "거울룸", "하늘뷰"]
+    "themes": ["무인텔", "거울룸", "하늘뷰"]
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "longtitude": "127.0482911",
     "image_url": ["/images/list/img2.jpeg"],
     "price": 159900,
-    "theme": ["무인텔", "호수뷰", "공주룸"]
+    "themes": ["무인텔", "호수뷰", "공주룸"]
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "longtitude": "127.0465711",
     "image_url": "/images/list/img3.jpeg",
     "price": 18800,
-    "theme": ["파티룸", "거울룸", "바다뷰"]
+    "themes": ["파티룸", "거울룸", "바다뷰"]
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "longtitude": "127.0513011",
     "image_url": "/images/list/img4.jpeg",
     "price": 53000,
-    "theme": ["파티룸", "트윈베드", "야외테라스"]
+    "themes": ["파티룸", "트윈베드", "야외테라스"]
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "longtitude": "127.0516411",
     "image_url": "/images/list/img5.jpeg",
     "price": 40000,
-    "theme": ["거울룸", "복층룸", "하늘뷰"]
+    "themes": ["거울룸", "복층룸", "하늘뷰"]
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "longtitude": "127.0444311",
     "image_url": "/images/list/img6.jpeg",
     "price": 490000,
-    "theme": ["거울룸", "야외테라스", "파티룸"]
+    "themes": ["거울룸", "야외테라스", "파티룸"]
   },
   {
     "id": 7,
@@ -67,7 +67,7 @@
     "longtitude": "127.0430511",
     "image_url": "/images/list/img7.jpeg",
     "price": 555555,
-    "theme": ["무인텔", "파티룸", "거울룸"]
+    "themes": ["무인텔", "파티룸", "거울룸"]
   },
   {
     "id": 8,
@@ -77,7 +77,7 @@
     "longtitude": "127.0458911",
     "image_url": "/images/list/img8.jpeg",
     "price": 999000,
-    "theme": ["호수뷰", "하늘뷰", "바다뷰"]
+    "themes": ["호수뷰", "하늘뷰", "바다뷰"]
   },
   {
     "id": 9,
@@ -87,6 +87,6 @@
     "longtitude": "127.0437111",
     "image_url": "/images/list/img9.jpeg",
     "price": 20000,
-    "theme": ["무인텔", "파티룸", "하늘뷰"]
+    "themes": ["무인텔", "파티룸", "하늘뷰"]
   }
 ]
